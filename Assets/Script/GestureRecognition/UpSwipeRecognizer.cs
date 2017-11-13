@@ -13,7 +13,7 @@ public class UpSwipeRecognizer : GestureRecognizer {
     protected float _reverseSwipeTimer = 0.0f;
 	
 	// Update is called once per frame
-	protected override void Update () {
+	protected override void UpdateRecognizer () {
         if (_lastDirectSwipeTimer > 0.0f) {
             _lastDirectSwipeTimer -= Time.deltaTime;
             

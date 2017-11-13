@@ -17,7 +17,17 @@ public class GestureRecognizer : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-	
+		bool isTracked = PointController.isTracked;
+
+		if (isTracked) {
+			UpdateRecognizer ();
+		} else {
+			Reset ();
+		}
+	}
+
+	protected virtual void UpdateRecognizer() {
+
 	}
     
     protected virtual void GestureRecognized () {

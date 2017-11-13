@@ -9,7 +9,7 @@ public class RightPunchRecognizer : GestureRecognizer {
     protected float _punchTimer = 0.0f;
 	
 	// Update is called once per frame
-	protected override void Update () {        
+	protected override void UpdateRecognizer () {        
         float currentZ = PointController.Hand_Right.transform.position.z;
         float punchSpeed = (currentZ - _prevZ) / Time.deltaTime;
         
