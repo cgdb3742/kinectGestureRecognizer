@@ -29,7 +29,7 @@ public class GestureRecognizedDisplayer : MonoBehaviour {
         }
 	}
     
-    void HandleGestureRecognized(object sender, EventArgs e)
+    protected virtual void HandleGestureRecognized(object sender, EventArgs e)
     {
         LastRecognizedTimer = MaxLastRecognizedTimer;
         

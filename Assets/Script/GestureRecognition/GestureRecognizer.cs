@@ -21,14 +21,18 @@ public class GestureRecognizer : MonoBehaviour {
 	}
     
     protected virtual void GestureRecognized () {
-        EventHandler handler = OnGestureRecognized;
-        EventArgs e = new EventArgs();
-        
-        if (handler != null) {
-            handler(this, e);
+        if (UserTrackedManager.instance.isTracked)
+        {
+            EventHandler handler = OnGestureRecognized;
+            EventArgs e = new EventArgs();
+
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+
+            Reset();
         }
-        
-        Reset();
     }
     
     protected virtual void Reset () {

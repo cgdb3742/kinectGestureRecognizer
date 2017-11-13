@@ -81,6 +81,8 @@ public class KinectPointController : MonoBehaviour {
 	public BoneMask Mask = BoneMask.All;
 	
 	public float scale = 1.0f;
+
+    public bool isTracked;
 	
 	// Use this for initialization
 	void Start () {
@@ -98,7 +100,8 @@ public class KinectPointController : MonoBehaviour {
 	void Update () {
 		if(player == -1)
 			return;
-		//update all of the bones positions
+        //update all of the bones positions
+        isTracked = false;
 		if (sw.pollSkeleton())
 		{
 			for( int ii = 0; ii < (int)Kinect.NuiSkeletonPositionIndex.Count; ii++) {
@@ -109,6 +112,7 @@ public class KinectPointController : MonoBehaviour {
 						sw.bonePos[player,ii].x * scale,
 						sw.bonePos[player,ii].y * scale,
 						sw.bonePos[player,ii].z * scale);
+                    isTracked = true;
 				}
 			}
 		}
