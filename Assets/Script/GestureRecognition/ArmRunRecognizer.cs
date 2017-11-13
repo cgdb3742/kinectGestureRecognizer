@@ -15,7 +15,7 @@ public class ArmRunRecognizer : GestureRecognizer {
     protected float _reverseRunTimer = 0.0f;
 	
 	// Update is called once per frame
-	protected override void Update () {
+	protected override void UpdateRecognizer () {
         if (_lastDirectRunTimer > 0.0f) {
             _lastDirectRunTimer -= Time.deltaTime;
             

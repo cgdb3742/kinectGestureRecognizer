@@ -20,6 +20,8 @@ public class UserTrackedManager : MonoBehaviour {
             isTracked = pointController.isTracked;
             ChangeColor();
         }
+
+		//Debug.Log (pointController.isTracked);
 	}
 
     void ChangeColor()

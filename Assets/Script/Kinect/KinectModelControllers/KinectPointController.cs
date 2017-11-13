@@ -98,10 +98,12 @@ public class KinectPointController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		isTracked = false;
+
 		if(player == -1)
 			return;
         //update all of the bones positions
-        isTracked = false;
+        
 		if (sw.pollSkeleton())
 		{
 			for( int ii = 0; ii < (int)Kinect.NuiSkeletonPositionIndex.Count; ii++) {
@@ -112,9 +114,11 @@ public class KinectPointController : MonoBehaviour {
 						sw.bonePos[player,ii].x * scale,
 						sw.bonePos[player,ii].y * scale,
 						sw.bonePos[player,ii].z * scale);
-                    isTracked = true;
+                    //isTracked = true;
 				}
 			}
+
+			isTracked = (sw.trackedPlayers [player] != -1);
 		}
 	}
 }
